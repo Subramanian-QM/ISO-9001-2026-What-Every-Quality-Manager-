@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ISO 9001:2026 — What Every Quality Manager Must Know Now | The Quality Edge</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Source+Serif+4:ital,wght@0,300;0,400;0,600;1,400&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --ink: #1a1510;
+    --ink-mid: #3d3328;
+    --ink-light: #6b5e50;
+    --ink-faint: #a89880;
+    --paper: #faf7f2;
+    --paper-warm: #f3ede3;
+    --paper-deep: #e8dfd0;
+    --accent: #8b2c0f;
+    --accent-light: #c44a1e;
+    --accent-pale: #f5e8e2;
+    --teal: #0f4f4a;
+    --teal-light: #1a7a72;
+    --teal-pale: #e0f0ee;
+    --gold: #8a6c1a;
+    --gold-pale: #f5eedc;
+    --rule: #c8b89a;
+  }
+
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: 'Source Serif 4', Georgia, serif;
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 1.78;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .page {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 0 2rem 5rem;
+  }
+
+  /* ── Masthead ── */
+  .masthead {
+    border-bottom: 2px solid var(--ink);
+    padding: 2.5rem 0 1rem;
+    margin-bottom: 2rem;
+    text-align: center;
+  }
+  .masthead-brand {
+    font-family: 'DM Mono', monospace;
+    font-size: 10.5px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--ink-light);
+    margin-bottom: 0.6rem;
+  }
+  .masthead-name {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 36px;
+    font-weight: 900;
+    letter-spacing: -0.01em;
+    color: var(--ink);
+    line-height: 1;
+    margin-bottom: 0.5rem;
+  }
+  .masthead-tagline {
+    font-family: 'Source Serif 4', Georgia, serif;
+    font-style: italic;
+    font-size: 14px;
+    color: var(--ink-light);
+    margin-bottom: 1rem;
+  }
+  .masthead-meta {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+  }
+
+  /* ── Issue label ── */
+  .issue-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.6rem 0;
+    border-bottom: 0.5px solid var(--rule);
+    margin-bottom: 2.5rem;
+  }
+  .issue-pill {
+    background: var(--accent);
+    color: #fff;
+    font-family: 'DM Mono', monospace;
+    font-size: 9.5px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    padding: 4px 10px;
+    border-radius: 2px;
+  }
+  .issue-date {
+    font-family: 'DM Mono', monospace;
+    font-size: 9.5px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+  }
+
+  /* ── Hero ── */
+  .hero {
+    margin-bottom: 2.5rem;
+  }
+  .hero-kicker {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 0.8rem;
+  }
+  .hero-headline {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 42px;
+    font-weight: 900;
+    line-height: 1.08;
+    color: var(--ink);
+    margin-bottom: 1rem;
+    letter-spacing: -0.02em;
+  }
+  .hero-subhead {
+    font-size: 18px;
+    font-style: italic;
+    color: var(--ink-mid);
+    line-height: 1.6;
+    border-left: 3px solid var(--accent);
+    padding-left: 1.2rem;
+    margin-bottom: 1.5rem;
+  }
+  .hero-byline {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem 0;
+    border-top: 0.5px solid var(--rule);
+    border-bottom: 0.5px solid var(--rule);
+  }
+  .byline-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: var(--teal);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Playfair Display', serif;
+    font-size: 15px;
+    font-weight: 700;
+    color: #fff;
+    flex-shrink: 0;
+  }
+  .byline-text { font-size: 13px; color: var(--ink-light); }
+  .byline-text strong { color: var(--ink); font-weight: 600; display: block; font-size: 14px; }
+
+  /* ── Callout box ── */
+  .callout {
+    background: var(--paper-warm);
+    border: 1px solid var(--paper-deep);
+    border-left: 4px solid var(--accent);
+    padding: 1.2rem 1.4rem;
+    border-radius: 2px;
+    margin: 2rem 0;
+  }
+  .callout-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 9.5px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 0.5rem;
+  }
+  .callout p { font-size: 15px; line-height: 1.65; color: var(--ink-mid); margin: 0; }
+
+  .callout-teal {
+    background: var(--teal-pale);
+    border-left: 4px solid var(--teal);
+  }
+  .callout-teal .callout-label { color: var(--teal); }
+  .callout-teal p { color: var(--ink-mid); }
+
+  .callout-gold {
+    background: var(--gold-pale);
+    border-left: 4px solid var(--gold);
+  }
+  .callout-gold .callout-label { color: var(--gold); }
+
+  /* ── Article body ── */
+  h2.section-head {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--ink);
+    line-height: 1.25;
+    margin: 2.5rem 0 0.8rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1.5px solid var(--ink);
+  }
+  h2.section-head span {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    display: block;
+    margin-bottom: 0.3rem;
+    font-weight: 400;
+  }
+
+  p { margin-bottom: 1.2rem; }
+
+  strong { font-weight: 600; color: var(--ink); }
+
+  /* ── Clause breakdown cards ── */
+  .clause-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+    margin: 1.5rem 0;
+  }
+  @media (max-width: 560px) { .clause-grid { grid-template-columns: 1fr; } }
+  .clause-card {
+    background: var(--paper-warm);
+    border: 1px solid var(--paper-deep);
+    border-radius: 3px;
+    padding: 1.1rem 1.2rem;
+  }
+  .clause-num {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 0.3rem;
+  }
+  .clause-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--ink);
+    margin-bottom: 0.5rem;
+    line-height: 1.3;
+  }
+  .clause-desc {
+    font-size: 13.5px;
+    line-height: 1.6;
+    color: var(--ink-mid);
+  }
+
+  /* ── Timeline ── */
+  .timeline {
+    margin: 1.5rem 0;
+    border-left: 2px solid var(--rule);
+    padding-left: 1.5rem;
+  }
+  .tl-item {
+    position: relative;
+    margin-bottom: 1.1rem;
+  }
+  .tl-item::before {
+    content: '';
+    position: absolute;
+    left: -1.72rem;
+    top: 0.42rem;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--paper);
+    border: 2px solid var(--accent);
+  }
+  .tl-item.done::before { background: var(--accent); }
+  .tl-date {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    margin-bottom: 0.1rem;
+  }
+  .tl-event {
+    font-size: 14.5px;
+    color: var(--ink-mid);
+    line-height: 1.5;
+  }
+  .tl-event strong { color: var(--ink); }
+
+  /* ── Action checklist ── */
+  .action-list {
+    list-style: none;
+    margin: 1rem 0;
+  }
+  .action-list li {
+    display: flex;
+    gap: 0.8rem;
+    align-items: flex-start;
+    padding: 0.75rem 0;
+    border-bottom: 0.5px solid var(--paper-deep);
+    font-size: 15px;
+    line-height: 1.55;
+    color: var(--ink-mid);
+  }
+  .action-list li:last-child { border-bottom: none; }
+  .action-num {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    color: var(--accent);
+    font-weight: 500;
+    flex-shrink: 0;
+    margin-top: 2px;
+    min-width: 22px;
+  }
+
+  /* ── Pull quote ── */
+  .pull-quote {
+    margin: 2.5rem 0;
+    padding: 1.5rem 2rem;
+    border-top: 2px solid var(--ink);
+    border-bottom: 2px solid var(--ink);
+    text-align: center;
+  }
+  .pull-quote p {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 22px;
+    font-style: italic;
+    font-weight: 700;
+    line-height: 1.4;
+    color: var(--ink);
+    margin: 0;
+  }
+
+  /* ── Bottom rule / sign-off ── */
+  .signoff {
+    margin-top: 3rem;
+    padding-top: 1.5rem;
+    border-top: 2px solid var(--ink);
+    font-size: 13.5px;
+    color: var(--ink-light);
+    line-height: 1.7;
+  }
+  .signoff strong { color: var(--ink); }
+
+  .footer-bar {
+    margin-top: 2rem;
+    padding-top: 1rem;
+    border-top: 0.5px solid var(--rule);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .footer-brand {
+    font-family: 'Playfair Display', serif;
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--ink);
+  }
+  .footer-meta {
+    font-family: 'DM Mono', monospace;
+    font-size: 9.5px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+  }
+
+  /* ── Decorative divider ── */
+  .rule-ornament {
+    text-align: center;
+    margin: 2rem 0;
+    color: var(--rule);
+    font-size: 18px;
+    letter-spacing: 0.5em;
+  }
+
+  @media print {
+    body { background: #fff; }
+    .page { padding: 1rem; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- Masthead -->
+  <header class="masthead">
+    <p class="masthead-brand">LinkedIn Newsletter</p>
+    <h1 class="masthead-name">The Quality Edge</h1>
+    <p class="masthead-tagline">Your Weekly Guide to Excellence &amp; Sustainability</p>
+    <div class="masthead-meta">
+      <span>Issue 01 · 2026</span>
+      <span>Pillar I — Standards &amp; Systems</span>
+      <span>April 2026</span>
+    </div>
+  </header>
+
+  <!-- Issue bar -->
+  <div class="issue-bar">
+    <span class="issue-pill">⚡ Urgent — Action Required in 2026</span>
+    <span class="issue-date">Est. Read: 7 Min</span>
+  </div>
+
+  <!-- Hero -->
+  <section class="hero">
+    <p class="hero-kicker">ISO 9001 · Revision Update · 2026</p>
+    <h2 class="hero-headline">ISO 9001:2026 — What Every Quality Manager Must Know Now</h2>
+    <p class="hero-subhead">The biggest revision to the world's most widely adopted quality standard in over a decade arrives this autumn. The DIS has been approved. The clock is running. Here is exactly what is changing — and what you must do before the deadline.</p>
+    <div class="hero-byline">
+      <div class="byline-avatar">QE</div>
+      <div class="byline-text">
+        <strong>The Quality Edge Editorial Team</strong>
+        The Quality Edge LinkedIn Newsletter · Published April 2026
+      </div>
+    </div>
+  </section>
+
+  <!-- Body -->
+  <article>
+
+    <p>If you manage a quality management system anywhere in the world, this is the article you need to read today. ISO 9001:2026 is no longer a rumour on the standards horizon — the Draft International Standard (DIS) was released in August 2025, approved by ISO member bodies in December 2025, and publication is now firmly targeted for <strong>Autumn 2026</strong>. That gives your organisation roughly three years to transition before ISO 9001:2015 certificates are retired around September 2029.</p>
+
+    <p>The good news? This is an evolution, not a revolution. The core process approach, the Plan-Do-Check-Act framework, and the fundamental clause structure you know from 2015 remain intact. But do not be lulled into complacency. Four targeted changes carry significant practical weight — and organisations that wait until the FDIS drops to begin preparing will pay for it in audit findings, rushed process rewrites, and cultural gaps that take years to close properly.</p>
+
+    <p>Let us walk through every change in detail, with practical actions you can start on today.</p>
+
+    <div class="callout">
+      <p class="callout-label">📋 Key Revision Timeline</p>
+      <div class="timeline" style="margin:0.8rem 0 0;">
+        <div class="tl-item done">
+          <p class="tl-date">August 2025</p>
+          <p class="tl-event"><strong>DIS released</strong> — Draft International Standard published to ISO member bodies</p>
+        </div>
+        <div class="tl-item done">
+          <p class="tl-date">December 2025</p>
+          <p class="tl-event"><strong>DIS approved</strong> — ISO member countries vote in favour; comment disposition begins</p>
+        </div>
+        <div class="tl-item done">
+          <p class="tl-date">Early 2026</p>
+          <p class="tl-event"><strong>FDIS expected</strong> — Final Draft International Standard in preparation now</p>
+        </div>
+        <div class="tl-item">
+          <p class="tl-date">Autumn 2026</p>
+          <p class="tl-event"><strong>Publication</strong> — ISO 9001:2026 officially released; transition period begins</p>
+        </div>
+        <div class="tl-item">
+          <p class="tl-date">Late 2026 – Mid 2027</p>
+          <p class="tl-event"><strong>CB accreditation</strong> — Certification bodies train auditors; few certificates issued in this window</p>
+        </div>
+        <div class="tl-item">
+          <p class="tl-date">~September 2029</p>
+          <p class="tl-event"><strong>Transition deadline</strong> — ISO 9001:2015 certificates retire. All organisations must be on the 2026 edition.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Change 1 -->
+    <h2 class="section-head"><span>Clause 4.1 &amp; 4.2</span>Climate Change Is Now Part of Your QMS Context</h2>
+
+    <p>In February 2024, ISO quietly issued an amendment to ISO 9001:2015 adding climate change to Clauses 4.1 and 4.2. Many organisations treated it as a footnote. That was a mistake. ISO 9001:2026 formally integrates those climate change provisions into the main body of the standard — making them a core, permanent element of your Quality Management System, not an optional appendix.</p>
+
+    <p>What does this mean in practice? When you assess the <strong>context of your organisation</strong> (Clause 4.1 — understanding internal and external issues), you must now explicitly consider whether climate change is a relevant factor. And when you identify your <strong>interested parties and their requirements</strong> (Clause 4.2), climate-related expectations from customers, regulators, and investors must be on your radar.</p>
+
+    <p>This does not transform ISO 9001 into an environmental management standard — that remains ISO 14001's territory. What it does is signal that quality, in 2026, cannot be defined in isolation from the physical and commercial environment your organisation operates in. A manufacturer whose supply chain runs through flood-prone regions, or a service provider whose data centres face energy-use scrutiny from regulators, must now factor those realities into QMS planning.</p>
+
+    <div class="callout callout-teal">
+      <p class="callout-label">✅ Your Action — Clause 4</p>
+      <p>Revisit your context analysis documentation. Add a dedicated section reviewing climate change as an external issue. Ask: could climate-related disruptions affect your ability to deliver conforming products or services? Document your assessment — even if the conclusion is "low relevance" — because auditors will now ask.</p>
+    </div>
+
+    <!-- Change 2 -->
+    <h2 class="section-head"><span>Clause 5.1 — Leadership</span>Quality Culture &amp; Ethical Behaviour Are Now a Requirement</h2>
+
+    <p>This is the change that will have the deepest long-term impact on how quality is managed — and it is also the one most organisations are least prepared for.</p>
+
+    <p>ISO 9001:2026 adds an explicit requirement in Clause 5.1.1 for <strong>top management to promote and demonstrate quality culture and ethical behaviour</strong>. This is not a vague aspiration buried in the introduction. It sits in the requirements clause, alongside leadership's existing responsibilities for policy commitment, integration of QMS into business processes, and customer focus. Quality culture and ethical behaviour are also referenced in two further clauses — including a new awareness requirement under Clause 7.3, which requires employees at all levels to understand what quality culture and ethical behaviour mean in their organisation.</p>
+
+    <p>Why does this matter so much? Because it shifts the audit focus from documentation to evidence of lived culture. For the past decade, a well-written quality policy, a set of objectives, and a management review record could get you through an audit. From 2026 onwards, auditors will look for evidence that leadership is actively shaping behaviour — through communication, through example-setting, through how nonconformances are handled, and through how improvement is rewarded or ignored.</p>
+
+    <p>The organisations that will struggle here are those where quality sits in a silo — where the QMR files the documents, runs the audit programme, and reports to a disinterested board. Those days are ending. The standard is now explicitly asking: does your leadership team actually believe in quality? And can you prove it?</p>
+
+    <div class="pull-quote">
+      <p>"Quality culture cannot be documented into existence. It must be demonstrated — every day, in every decision, from the top of the organisation down."</p>
+    </div>
+
+    <div class="callout callout-teal">
+      <p class="callout-label">✅ Your Action — Clause 5</p>
+      <p>Start a leadership quality culture audit now. Map the evidence of top management engagement: Do they attend management reviews or merely sign them off? Are they visible during nonconformance investigations? Do they discuss quality in board communications? Build a culture evidence file — not for box-ticking, but as genuine proof that quality is a leadership value, not a compliance exercise.</p>
+    </div>
+
+    <!-- Change 3 -->
+    <h2 class="section-head"><span>Clause 6.1</span>Risk and Opportunity Management — Finally Clarified</h2>
+
+    <p>One of the most consistent pain points since ISO 9001:2015 introduced risk-based thinking has been the blurring of risks and opportunities. In practice, many organisations maintained a single "risk and opportunities register" where the two concepts were confused, conflated, or where opportunities were treated as risks with a positive spin. Auditors frequently found this weak — and they were right.</p>
+
+    <p>ISO 9001:2026 resolves this by restructuring Clause 6.1 into three distinct sub-clauses:</p>
+
+    <div class="clause-grid">
+      <div class="clause-card">
+        <p class="clause-num">Clause 6.1.1</p>
+        <p class="clause-title">General — Foundation for Planning</p>
+        <p class="clause-desc">The overarching requirement to consider context, interested parties, and the scope when planning for risks and opportunities.</p>
+      </div>
+      <div class="clause-card">
+        <p class="clause-num">Clause 6.1.2</p>
+        <p class="clause-title">Actions to Address Risks</p>
+        <p class="clause-desc">Dedicated sub-clause for risk identification, assessment, and planned actions. Clearer separation means stronger, more auditable risk management.</p>
+      </div>
+      <div class="clause-card">
+        <p class="clause-num">Clause 6.1.3</p>
+        <p class="clause-title">Actions to Address Opportunities</p>
+        <p class="clause-desc">Opportunities are now explicitly treated as a distinct planning item — not an afterthought. How does your QMS systematically identify and pursue them?</p>
+      </div>
+      <div class="clause-card" style="background:var(--accent-pale); border-color: var(--accent);">
+        <p class="clause-num" style="color:var(--accent-light);">Annex A — New Guidance</p>
+        <p class="clause-title">Expanded Risk &amp; Opportunity Guidance</p>
+        <p class="clause-desc">Annex A now features significantly expanded, non-mandatory guidance on both concepts — practical examples and implementation support.</p>
+      </div>
+    </div>
+
+    <p>This restructuring is genuinely helpful. It forces organisations to treat opportunities as a first-class planning activity, not something mentioned briefly at the bottom of a risk register. The expanded Annex A guidance will provide concrete examples — something quality practitioners have been asking for since 2015.</p>
+
+    <div class="callout callout-teal">
+      <p class="callout-label">✅ Your Action — Clause 6.1</p>
+      <p>Review your risk and opportunity register. Can you clearly separate risks from opportunities right now? If your register lists "opportunity: improve supplier performance" next to "risk: supplier failure," you have work to do. Create two distinct registers — or at minimum, two clearly separated sections — with dedicated action plans and owners for each. This is the cleanest, most auditor-friendly preparation you can make today.</p>
+    </div>
+
+    <!-- Change 4 -->
+    <h2 class="section-head"><span>New — Annex A</span>The First-Ever Implementation Guidance Annex</h2>
+
+    <p>Here is a change that does not get enough attention: <strong>Annex A is entirely new to ISO 9001.</strong> For the first time in the standard's history, ISO has added a non-mandatory supplementary guidance annex spanning approximately 15 pages, providing practical interpretation support aligned clause-by-clause with the requirements in Clauses 4 through 10.</p>
+
+    <p>This is a significant development for two reasons. First, it acknowledges something ISO 9001 practitioners have always known — the standard is often too terse to implement well without external interpretation. Second, it provides a shared reference point for auditors and auditees that reduces the variability in how requirements are assessed across different certification bodies and geographies.</p>
+
+    <p>Annex A carries expanded guidance on quality culture, risk and opportunity management, and the integration of climate considerations — the three major thematic additions of the 2026 revision. While it does not create new requirements (non-mandatory means exactly that), smart organisations will use it proactively to benchmark their implementation against what the standard's authors intended.</p>
+
+    <div class="callout callout-gold">
+      <p class="callout-label">💡 Strategic Insight</p>
+      <p>Annex A will effectively become the auditor's reference text when assessing intent and adequacy. Organisations whose QMS design already aligns with the Annex A guidance will have a material advantage in transition audits. When the standard is published in Autumn 2026, read Annex A before updating a single document.</p>
+    </div>
+
+    <!-- What Didn't Change -->
+    <h2 class="section-head"><span>Reality Check</span>What Did Not Change — and Why That Matters Too</h2>
+
+    <p>In the rush to understand what is new, it is equally important to know what was considered and rejected. The 2021 user survey generated significant expectations for changes that did not materialise in the DIS:</p>
+
+    <p><strong>AI and digital transformation</strong> — despite enormous industry interest, the 2026 revision includes no specific requirements for artificial intelligence, automation, or digital tools. Organisations integrating AI into their QMS will continue to apply the general requirements of Clauses 7 and 8 to those technologies.</p>
+
+    <p><strong>Broader ESG requirements</strong> — ISO 9001 is not becoming an ESG standard. Beyond the climate change integration, broader environmental and social governance provisions were not included. That remains the remit of ISO 14001, ISO 45001, and the emerging ISO 53001 sustainability standards.</p>
+
+    <p><strong>Supply chain resilience</strong> — despite global disruptions from 2020 to 2025, no specific new clauses address supply chain risk. Existing Clause 8.4 requirements for control of externally provided processes remain the framework.</p>
+
+    <p>This disciplined restraint is actually a strength. ISO 9001's power has always been its universality — applicable across industries, geographies, and organisation sizes. Over-specification would undermine that. The standard gives you the principles; your organisation determines the application.</p>
+
+    <!-- Action Plan -->
+    <h2 class="section-head"><span>Your Transition Playbook</span>Six Actions to Take Before Autumn 2026</h2>
+
+    <p>You have time — but not unlimited time. The window between now and publication is your opportunity to prepare on your terms, not under audit pressure. Here is your practical roadmap:</p>
+
+    <ul class="action-list">
+      <li>
+        <span class="action-num">01</span>
+        <div><strong>Conduct a gap analysis against the DIS themes now.</strong> You do not need the final published standard to assess your current position against quality culture, climate context, and risk/opportunity separation. Build a gap register and assign owners today.</div>
+      </li>
+      <li>
+        <span class="action-num">02</span>
+        <div><strong>Brief your top management team on Clause 5 expectations.</strong> The biggest transition risk is a leadership team that does not understand the cultural shift the standard requires. Schedule a board-level briefing. Show them what "evidence of quality culture" looks like in practice.</div>
+      </li>
+      <li>
+        <span class="action-num">03</span>
+        <div><strong>Update your context analysis to include climate change assessment.</strong> This is a straightforward documentation update, but it must be substantive — not a single line added to an existing document. Map actual climate-related risks relevant to your operations and supply chain.</div>
+      </li>
+      <li>
+        <span class="action-num">04</span>
+        <div><strong>Separate your risk and opportunity registers.</strong> Start using the new 6.1.2 / 6.1.3 structure now, before the standard is published. This gives you a year-plus of operational history to demonstrate effective implementation during your first transition audit.</div>
+      </li>
+      <li>
+        <span class="action-num">05</span>
+        <div><strong>Plan awareness training for quality culture and ethics.</strong> Clause 7.3's new awareness requirement means every employee needs to understand these concepts in the context of your organisation. Begin developing that training content now so it is embedded before external audits begin.</div>
+      </li>
+      <li>
+        <span class="action-num">06</span>
+        <div><strong>Engage your certification body early.</strong> Ask your CB when they expect transition audit protocols to be finalised. Understand the timeline for your own recertification cycle. The window between publication and CB accreditation (late 2026 to mid-2027) means early movers will have the most experienced auditors available.</div>
+      </li>
+    </ul>
+
+    <div class="rule-ornament">— ✦ —</div>
+
+    <!-- Closing -->
+    <h2 class="section-head"><span>The Bottom Line</span>This Is the Moment to Lead, Not Follow</h2>
+
+    <p>ISO 9001:2026 is a targeted, thoughtful evolution of a standard that has shaped quality management practice for four decades. It does not demand a QMS overhaul. What it does demand is a genuine reckoning with whether quality in your organisation is truly embedded in leadership behaviour, whether your processes account for the world we actually live in — including its climate realities — and whether your risk management practices are robust enough to withstand scrutiny.</p>
+
+    <p>The quality managers who will emerge strongest from this transition are those who use the revision not as a compliance burden, but as a lever. A lever to get board-level commitment to quality culture. A lever to elevate climate and sustainability conversations into the QMS. A lever to sharpen risk practices that may have grown stale since 2015.</p>
+
+    <p>The standard is evolving. The question is whether your organisation evolves with it — proactively and purposefully — or scrambles to catch up in 2029.</p>
+
+    <p><strong>The Quality Edge is watching every development in the ISO 9001:2026 revision process closely. We will publish updates as the FDIS is released and transition guidance from the IAF becomes available. Share this edition with your quality team, your management, and your certification body contacts — the conversation needs to start now.</strong></p>
+
+  </article>
+
+  <!-- Sign-off -->
+  <div class="signoff">
+    <p>💬 <strong>Join the conversation:</strong> What is your biggest concern about the ISO 9001:2026 transition? Drop your thoughts in the comments below. Are you already preparing — or waiting for the FDIS? We read every response.</p>
+    <p style="margin-top:0.8rem;">📌 <strong>Next week in The Quality Edge:</strong> Climate Change Is Now a QMS Issue — a deep dive into exactly how to conduct a climate context analysis that will satisfy your auditors and genuinely strengthen your organisation.</p>
+  </div>
+
+  <div class="footer-bar">
+    <span class="footer-brand">The Quality Edge</span>
+    <span class="footer-meta">LinkedIn Newsletter · Issue 01 · April 2026</span>
+  </div>
+
+</div>
+</body>
+</html>
